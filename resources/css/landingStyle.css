@@ -1,0 +1,12 @@
+
+
+body{
+    /* background-image: url("../../images/bg-mindCheck.png");
+    background-repeat: no-repeat;
+    background-position: top; */
+    background-color: red !important;
+}
+h1{
+    font-size: 3rem;
+    font-weight: 700;
+}
