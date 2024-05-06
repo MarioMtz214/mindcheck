@@ -40,7 +40,7 @@
                 <div class="w-full flex flex-row pl-3 justify-center 2xl:justify-center items-start pt-10">
                     <h1 class="font-extralight sm:text-sm xl:text-lg 2xl:text-2xl text-white" >MindCheck</h1>
                 </div>
-                <button @click="open = !open" class="relative w-5 h-5 left-2 xl:-top-1 2xl:-top-2 bg-red-500 border-2 border-white hover:cursor-pointer hover:-translate-x-1 active:translate-x-1 transition duration-150">
+                <button @click="open = !open" class="relative w-5 h-5 left-2 xl:-top-1 2xl:-top-2 bg-red-500 border-2 border-white hover:cursor-pointer hover:-translate-x-1 active:translate-x-1 transition duration-300">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path :class="{'hidden': open, 'inline-flex': !open}" d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path :class="{'hidden': !open, 'inline-flex': open}" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -101,7 +101,7 @@
         </div>
 
 
-        <div class="flex-1 bg-gray-100">
+        <div class="flex flex-1 flex-col bg-gray-100">
             <x-banner />
 
             {{-- navegador --}}
@@ -111,45 +111,16 @@
 
             {{-- contenido del dashboard --}}
 
-            <div class="p-4">
+            <div class="p-4 flex flex-1">
+{{-- 
+                <x-adminDashboard></x-adminDashboard> --}}
 
-                <h1>aquie stoy 1</h1>
+                
 
             </div>
 
         </div>
 
         
-               {{-- <div class="flex flex-row">
-                    <div class="w-1/12 h-screen bg-red-500">
-                        <h1>sidebar</h1>
-                    </div>
-                    <div class="w-11/12">
-                        @livewire('navigation-menu')
-                    </div>
-               </div> --}}
-
-            
-
-            
-
-            {{-- <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-
-        @stack('modals')
-
-        @livewireScripts --}}
     </body>
 </html>

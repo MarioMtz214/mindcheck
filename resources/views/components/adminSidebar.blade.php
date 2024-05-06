@@ -67,7 +67,7 @@ $classes = ($active ?? false)
             <div class="w-full h-16 flex flex-row justify-center pl-4 items-start pt-10 ">
                 <h1 class="font-extralight sm:text-sm xl:text-2xl 2xl:text-3xl text-gray-800" >MindCheck</h1>
             </div>
-            <button @click="open = !open" class="relative w-5 h-5 left-2 xl:-top-0 2xl:-top-2 bg-white border-2 border-red-500 hover:cursor-pointer hover:translate-x-1 active:-translate-x-1 transition duration-150">
+            <button @click="open = !open" class="relative w-5 h-5 left-2 xl:-top-0 2xl:-top-2 bg-gray-100 border-2 border-red-500 hover:cursor-pointer hover:translate-x-1 active:-translate-x-1 transition duration-150">
                 <svg width="15" height="14" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18.6971 6L6.3335 18" stroke="#FF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path :class="{'hidden': !open, 'inline-flex': open}" class="hidden"  d="M6.3335 6L18.6971 18" stroke="#FF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -75,20 +75,20 @@ $classes = ($active ?? false)
             </button>
         </div>
 
-        <div class="flex flex-col pt-4 pl-2 ">
-            <div class="h-10 2xl:h-16 flex justify-start items-center hover:translate-x-1 active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
+        <div class="flex flex-col pt-4 ">
+            <div class="h-10 2xl:h-16 flex justify-start items-center pl-2 hover:bg-gray-200  active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
                 <h1 class="text-lg 2xl:text-2xl">Home</h1>
             </div>
-            <div class="h-10 2xl:h-16 flex justify-start items-center hover:translate-x-1 active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
+            <div class="h-10 2xl:h-16 flex justify-start items-center pl-2 hover:bg-gray-200  active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
                 <h1 class="text-lg 2xl:text-2xl">Gestión de usuarios</h1>
             </div>
-            <div class="h-10 2xl:h-16 flex justify-start items-center hover:translate-x-1 active:translate-x-0 hover:cursor-pointer  hover:drop-shadow-xl transition duration-300">
+            <div class="h-10 2xl:h-16 flex justify-start items-center pl-2 hover:bg-gray-200  active:translate-x-0 hover:cursor-pointer  hover:drop-shadow-xl transition duration-300">
                 <h1 class="text-lg 2xl:text-2xl">Aún no se</h1>
             </div>
-            <div class="h-10 2xl:h-16 flex justify-start items-center hover:translate-x-1 active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
+            <div class="h-10 2xl:h-16 flex justify-start items-center pl-2 hover:bg-gray-200  active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
                 <h1 class="text-lg 2xl:text-2xl">Games</h1>
             </div>
-            <div class="h-10 2xl:h-16 flex justify-start items-center hover:translate-x-1 active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
+            <div class="h-10 2xl:h-16 flex justify-start items-center pl-2 hover:bg-gray-200  active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
                 <h1 class="text-lg 2xl:text-2xl">Ajustes</h1>
             </div>
     

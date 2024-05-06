@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     use HasFactory;
-
     /**
      * The table associated with the model.
      *
@@ -43,6 +42,10 @@ class Role extends Model
         'name',
         'description',
     ];
+
+    public function getRoleIdByName($rolename) {
+        return $this->where('name', $rolename)->first()->id;
+    }
 
     /**
      * Get the users associated with the role.
@@ -80,4 +83,19 @@ class Role extends Model
         return $this->belongsToMany(Role::class, 'role_role', 'parent_role_id', 'role_id');
     }  
     
+    public function isAdmin()
+    {
+        return $this->roles()->where('name', 'admin')->exists();
+    }
+
+    public function isStudent()
+    {
+        return $this->roles()->where('name', 'student')->exists();
+    }
+
+    public function isTeacher()
+    {
+        return $this->roles()->where('name', 'teacher')->exists();
+    }
+
 }

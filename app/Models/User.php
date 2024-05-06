@@ -2,13 +2,17 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+
+
+use App\Models\Role; // Agrega esta línea
 
 class User extends Authenticatable
 {
@@ -50,12 +54,40 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array<int, string>
-     */
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function isAdmin() {
+        return $this->roles()->where('name', 'admin');
+    }
+
+    public function isStudent() {
+        return $this->roles()->where('name', 'student');
+    }
+
+    public function isTeacher() {
+        return $this->roles()->where('name', 'teacher');
+    }
+
+    public function getIsAdminAttribute() {
+        return $this->roles()->where('name', 'admin')->exists();
+    }
+    
+    public function getIsStudentAttribute() {
+        return $this->roles()->where('name', 'student')->exists();
+    }
+    
+    public function getIsTeacherAttribute() {
+        return $this->roles()->where('name', 'teacher')->exists();
+    }
+    
+
+    public function roles() {
+        return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id');
+    }
+
+    public function role(): BelongsTo {
+        return $this->belongsTo(Role::class, 'role_id');
+    }
 }
