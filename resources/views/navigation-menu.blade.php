@@ -1,39 +1,18 @@
 <nav x-data="{ open: false }" class="bg-gray-50  flex flex-row">
 
-    {{-- side bar --}}
-    {{-- <div class="w-1/6 fixed transition" :class="{'block': open, 'hidden': !open}">
-        <x-adminSidebar ></x-adminSidebar>
-        
-    </div> --}}
-        
-        <!-- Primary Navigation Menu -->
+        <!-- Primary Navigation Menu admin -->
 
         <div class="flex flex-row w-full pr-6 h-24 ">
 
-             <!-- Btn Sidebar Menu -->
-            {{-- <div class="flex relative justify-start items-center  h-24">
-                <button @click="open = !open" class="absolute w-5 h-5 -left-2 top-10 bg-red-500 border-2 border-white hover:cursor-pointer hover:-translate-x-1 active:translate-x-1 transition duration-150">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-            </div> --}}
-            
+
             <div class="flex justify-between w-full h-24 ">
                 <div class="flex">
-                    <!-- Logo -->
-                    {{-- <div class="shrink-0 flex items-center">
-                        <a href="{{ route('dashboard') }}">
-                            <x-application-mark class="block h-9 w-auto" />
-                        </a>
-                        <h1>aqui estoy 3</h1>
-                    </div> --}}
-    
+  
                     <!-- Navigation Links -->
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                         <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
-                            <h1>aqui estoy 4</h1>
+                            {{ __('Home') }}
+                            
                         </x-nav-link>
                     </div>
                 </div>

@@ -38,7 +38,8 @@
         <div class="w-1/12 h-screen bg-red-500 rounded-br-3xl" :class="{'block': !open, 'hidden': open}">
             <div class="flex relative justify-end items-end ">
                 <div class="w-full flex flex-row pl-3 justify-center 2xl:justify-center items-start pt-10">
-                    <h1 class="font-extralight sm:text-sm xl:text-lg 2xl:text-2xl text-white" >MindCheck</h1>
+                    <h1 class="font-extralight sm:text-sm xl:text-lg 2xl:text-2xl text-white hover:cursor-pointer" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}>MindCheck</h1>
                 </div>
                 <button @click="open = !open" class="relative w-5 h-5 left-2 xl:-top-1 2xl:-top-2 bg-red-500 border-2 border-white hover:cursor-pointer hover:-translate-x-1 active:translate-x-1 transition duration-300">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -111,13 +112,16 @@
 
             {{-- contenido del dashboard --}}
 
-            <div class="p-4 flex flex-1">
+            
 {{-- 
                 <x-adminDashboard></x-adminDashboard> --}}
 
-                
+                 {{-- @ Page content --}}
+            <main class="flex-1 flex flex-col p-8 ">
+                {{ $slot }}
+            </main>
 
-            </div>
+            
 
         </div>
 

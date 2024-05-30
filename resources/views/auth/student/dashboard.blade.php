@@ -1,8 +1,8 @@
 @extends('layouts.studentLayout')
 
 @section('body')
-    <div class="h-[100%]  bg-gray-50"> 
-        <div class="flex flex-row h-[70%] ">
+    <div class="h-[100%]  bg-gray-50 snap-y snap-mandatory"> 
+        <div class="flex flex-row h-[70%] snap-center">
             <div class="flex justify-center w-1/12 p-4 "> 
                 {{-- sidebar --}}
                 <div class="flex justify-center items-center bg-red-500 w-20 h-[70%] rounded-full">
@@ -143,9 +143,39 @@
             </div>
 
         </div>
-        <div id="fondo" class="flex flex-row h-screen ">
-
+        <div id="fondo" class="flex flex-row h-screen  border-b-8 border-red-400 snap-center">
+            <div class="w-full flex flex-col justify-center items-center ">
+                <div class="h-1/3"></div>
+                <div class="h-2/3 flex items-center pt-12">
+                    
+                        <button id="startButton" class="bg-white w-72 h-72 rounded-full start-btn active:translate-x-1 active:translate-y-1 transition duration-150">
+                        <h1 class="text-red-500 font-bold text-3xl">Start</h1>
+                        </button>
+                        
+                        <script>
+                            document.getElementById("startButton").addEventListener("click", function() {
+                                // Generar un número aleatorio entre 0 y 1
+                                var randomNumber = Math.floor(Math.random() * 2);
+                        
+                                // Redirigir según el número aleatorio generado
+                                var url;
+                                if (randomNumber === 0) {
+                                    url = "http://localhost:3000/react-simon-says";
+                                } else {
+                                    url = "http://localhost:5174/";
+                                }
+                        
+                                // Abrir la URL en una nueva pestaña
+                                window.open(url, "_blank");
+                            });
+                        </script>
+                    
+                </div>
+            </div>
         </div>
+        <x-students.footer />
+        
+
                                                                                       
     </div>
 @endsection

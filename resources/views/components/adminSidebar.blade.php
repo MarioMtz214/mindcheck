@@ -76,12 +76,16 @@ $classes = ($active ?? false)
         </div>
 
         <div class="flex flex-col pt-4 ">
-            <div class="h-10 2xl:h-16 flex justify-start items-center pl-2 hover:bg-gray-200  active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
-                <h1 class="text-lg 2xl:text-2xl">Home</h1>
-            </div>
-            <div class="h-10 2xl:h-16 flex justify-start items-center pl-2 hover:bg-gray-200  active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
-                <h1 class="text-lg 2xl:text-2xl">Gestión de usuarios</h1>
-            </div>
+            <a href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                <div class="h-10 2xl:h-16 flex justify-start items-center pl-2 hover:bg-gray-200  active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
+                    <h1 class="text-lg 2xl:text-2xl">Home</h1>
+                </div>
+            </a>
+            <a href="{{ route('admin.users.index') }}">
+                <div class="h-10 2xl:h-16 flex justify-start items-center pl-2 hover:bg-gray-200  active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
+                    <h1 class="text-lg 2xl:text-2xl">Gestión de usuarios</h1>
+                </div>
+            </a>
             <div class="h-10 2xl:h-16 flex justify-start items-center pl-2 hover:bg-gray-200  active:translate-x-0 hover:cursor-pointer  hover:drop-shadow-xl transition duration-300">
                 <h1 class="text-lg 2xl:text-2xl">Aún no se</h1>
             </div>

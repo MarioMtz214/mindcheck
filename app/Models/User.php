@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 
 use App\Models\Role; // Agrega esta línea
@@ -58,8 +59,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function isAdmin() {
-        return $this->roles()->where('name', 'admin');
+    // public function isAdmin() {
+    //     return $this->roles()->where('name', 'admin');
+    // }
+    public function isAdmin(): bool {
+        return $this->roles()->where('name', 'admin')->exists();
     }
 
     public function isStudent() {
@@ -83,7 +87,10 @@ class User extends Authenticatable
     }
     
 
-    public function roles() {
+    // public function roles() {
+    //     return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id');
+    // }
+    public function roles(): BelongsToMany {
         return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id');
     }
 

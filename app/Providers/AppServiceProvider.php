@@ -3,27 +3,26 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Blade;
-
-Blade::component('layouts.sidebar-layout', 'layouts.sidebar-layout');
-
-
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
+     *
+     * @return void
      */
-    public function register(): void
+    public function register()
     {
-        //
+        // Aquí puedes registrar servicios de la aplicación
     }
 
     /**
      * Bootstrap any application services.
+     *
+     * @return void
      */
-    public function boot(): void
+    public function boot()
     {
-        //
+        // Aquí puedes agregar lógica relacionada con las directivas personalizadas de Blade
     }
 }

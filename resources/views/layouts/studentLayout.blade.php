@@ -18,11 +18,12 @@
             
             @yield('body')
         </div>
+        
 
     </div>
     
 
-        {{-- <div class="p-4 flex flex-1">
+        {{-- <div class="p-4 flex flex-1">  
             @yield('body')
         </div> --}}
 

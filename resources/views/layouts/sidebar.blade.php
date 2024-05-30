@@ -24,18 +24,17 @@
         </div>
         
         <div class="flex flex-col mt-4 2xl:mt-9">
-            <div
-                class="h-10 2xl:h-16 flex justify-center items-center hover:translate-x-1 active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
-                <svg width="26" class="w-8 h-8 2xl:w-10 2xl:h-10 hover:drop-shadow-xl" height="26"
-                    viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M5.75 17.25L23 3.83331L40.25 17.25V38.3333C40.25 39.35 39.8461 40.325 39.1272 41.0439C38.4084 41.7628 37.4333 42.1666 36.4167 42.1666H9.58333C8.56667 42.1666 7.59165 41.7628 6.87276 41.0439C6.15387 40.325 5.75 39.35 5.75 38.3333V17.25Z"
-                        stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M17.25 42.1667V23H28.75V42.1667" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </div>
-            <div
+            
+            <a href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                <div class="h-10 2xl:h-16 flex justify-center items-center hover:translate-x-1 active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
+                    <svg width="26" class="w-8 h-8 2xl:w-10 2xl:h-10 hover:drop-shadow-xl" height="26" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.75 17.25L23 3.83331L40.25 17.25V38.3333C40.25 39.35 39.8461 40.325 39.1272 41.0439C38.4084 41.7628 37.4333 42.1666 36.4167 42.1666H9.58333C8.56667 42.1666 7.59165 41.7628 6.87276 41.0439C6.15387 40.325 5.75 39.35 5.75 38.3333V17.25Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M17.25 42.1667V23H28.75V42.1667" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </a>
+            <a href="{{ route('admin.users.index') }}">
+                <div
                 class="h-10 2xl:h-16 flex justify-center items-center hover:translate-x-1 active:translate-x-0 hover:cursor-pointer hover:drop-shadow-xl transition duration-300">
                 <svg width="26" class="w-8 h-8 2xl:w-10 2xl:h-10 hover:drop-shadow-xl" height="26"
                     viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +51,8 @@
                         d="M30.6667 5.99915C32.3159 6.42139 33.7776 7.38049 34.8214 8.72524C35.8652 10.07 36.4318 11.7239 36.4318 13.4262C36.4318 15.1286 35.8652 16.7825 34.8214 18.1272C33.7776 19.472 32.3159 20.4311 30.6667 20.8533"
                         stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-            </div>
+                </div>
+            </a>
             <div
                 class="h-10 2xl:h-16 flex justify-center items-center hover:translate-x-1 active:translate-x-0 hover:cursor-pointer  hover:drop-shadow-xl transition duration-300">
                 <svg width="26" class="w-8 h-8 2xl:w-10 2xl:h-10 hover:drop-shadow-xl" height="26"

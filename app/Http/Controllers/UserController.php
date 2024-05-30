@@ -18,14 +18,14 @@ class UserController extends Controller
     {
         return view('admin.users.create');
     }
-
     public function store(Request $request)
     {
         $rules = [
-            //Ponemos las reglas que necesitamos
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8',
+            // Agrega aquí más reglas de validación según tus necesidades
         ];
-
-        //Mirar como poner el creation_user
 
         $request->validate($rules);
 
@@ -48,22 +48,33 @@ class UserController extends Controller
             'user' => $user
         ]);
     }
+//     public function edit($id)
+// {
+//     $user = User::findOrFail($id); // Obtener el usuario por su ID
+//     return view('admin.users.edit', compact('user'));
+// }
 
     public function update(Request $request, User $user)
-    {
-        //Mirar como guardar los campos de update_user
-        $user->fill($request->all());
+{
+    $rules = [
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+        // Agrega aquí más reglas de validación según tus necesidades
+    ];
 
-        $user->save();
+    $request->validate($rules);
 
-        return redirect()->route('admin.users.index')
-            ->with('success', "El usuario {$user->username} se editó con éxito.");
-    }
+    $user->fill($request->all());
+    $user->save();
+
+    return redirect()->route('admin.users.index')
+        ->with('success', "El usuario {$user->name} se editó con éxito.");
+}
 
     public function destroy(User $user)
     {
         $user->delete();
-        
+
         return redirect()->route('admin.users.index')
             ->with('success', "El usuario {$user->username} se eliminó con éxito.");
     }
